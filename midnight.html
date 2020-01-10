@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hex Clan Labs</title>
+	<!-- Modernizr -->
+	<script src="js/modernizr.js"></script>
+	<!-- Open Sans from Google Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<!-- Main styles file -->
+	<link rel="stylesheet" href="css/styles.css" />
+	<!-- Icons via Font Awesome -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+</head>
+<body>
+	<!-- Animated background -->
+	<canvas id="bg-canvas"></canvas>
+	
+	<!-- First screen -->
+	<div class="splash">
+		<div class="centered-unit">
+			<div class="container">
+				<!-- Main header -->
+				<h1>We Are Launching Soon!</h1>
+				<!-- Sub header -->
+				<p class="lead">Dealing with some really complicated stuff here :)</p>
+				
+				<!-- Countdown -->
+				<div class="countdown large">
+					<!-- Days -->
+					<div class="time days">
+						<div class="value">00</div>
+						<div class="unit">Days</div>
+					</div>
+					<!-- Hours -->
+					<div class="time hours">
+						<div class="value">00</div>
+						<div class="unit">Hours</div>
+					</div>
+					<!-- Minutes -->
+					<div class="time minutes">
+						<div class="value">00</div>
+						<div class="unit">Minutes</div>
+					</div>
+					<!-- Seconds -->
+					<div class="time seconds">
+						<div class="value">00</div>
+						<div class="unit">Seconds</div>
+					</div>
+				</div>
+				<!-- Countdown end -->
+			</div>	
+		</div>
+	</div>
+	
+	<!-- Second screen -->
+	<div class="overlap">
+	
+		<!-- Link "Scroll down to learn more" -->
+		<a href="" class="more">Scroll down <i class="fa fa-chevron-down"></i> to learn more</a>
+		
+		<!-- Detailed info -->
+		<div class="container few-words">
+			<div class="row">
+				<!-- First column -->
+				<div class="col col-heading">
+					<!-- Detailed info -->
+					<h2>A few words about our awesome company!</h2>
+					
+					<!-- Social icons -->
+					<div class="social">
+						<a href="https://twitter.com/hexclanlabs" class="social-icon">
+							<i class="fa fa-twitter fa-lg"></i>
+						</a>
+						<a href="https://www.facebook.com/hexclanlabs" class="social-icon">
+							<i class="fa fa-facebook fa-lg"></i>
+						</a>
+						<a href="" class="social-icon">
+							<i class="fa fa-google-plus fa-lg"></i>
+						</a>
+						<a href="https://www.instagram.com/hexclanlabs/" class="social-icon">
+							<i class="fa fa-instagram fa-lg"></i>
+						</a>
+					</div>
+					<!-- Social icons block end -->
+				</div>
+				<!-- First column end -->
+				
+				<!-- Second column -->
+				<div class="col col-content">
+					<p>Our mission is to organise & create the world’s best websites or webpages and make it universally amazing & interactive.</p>
+				</div>
+				<!-- Second column end -->
+				
+				<!-- Third column -->
+				<div class="col col-contacts">
+					<h3>Contact us</h3>
+					<div class="contact">
+						<span class="icon"><i class="fa fa-phone fa-fw"></i></span>
+						<span class="value"><a href="tel: +919035565151">+919035565151</span>
+							span class="icon"><i class="fa fa-phone fa-fw"></i></span>
+						<span class="value"><a href="tel: +919482858070">+919482858070</span>
+					</div>
+					<div class="contact">
+						<span class="icon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						<span class="value"><a href="mailto: hexclanlabs@gmail.com">hexclanlabs@gmail.com</a></span>
+					</div>
+					<div class="contact">
+						<span class="icon"><i class="fa fa-map-marker fa-fw"></i></span>
+						<span class="value">824, 2nd Main. 5th Stage, 2nd
+							Phase, BEML Layout, Rajarajeshwarinagar, Bangalore, Karnataka, India 560098 </span>
+					</div>
+				</div>
+				<!-- Third column end -->
+			</div>
+		</div>
+		<!-- Detailed info block end -->
+		<!-- Footer -->
+		<div class="footer">
+			<div class="container">
+				&copy; 2019 Design By Hex Clan Labs. All rights reserved.
+			</div>
+		</div>
+		<!-- Footer end -->
+	</div>
+	
+	<!-- JavaScripts -->
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/countdown.js"></script>
+	<script src="js/bezierCanvas.js"></script>
+	<script src="js/notifyMe.js"></script>
+	
+	<script type="text/javascript">
+	$().ready(function(){
+	
+		// Activate countdownTimer plugin on a '.countdown' element
+		$(".countdown").countdownTimer({
+			// Set the end date for the countdown
+			endTime: new Date("January 26, 2020 12:00:00 UTC+0530")
+		});
+		
+		
+		// Activate notifyMe plugin on a '#notifyMe' element	
+		$("#notifyMe").notifyMe();
+		
+		
+		// Activate bezierCanvas plugin on a #bg-canvas element
+		$("#bg-canvas").bezierCanvas({
+			maxStyles: 10,
+			maxLines: 100,
+			lineSpacing: 1,
+			colorBase: {r: 100,g: 100,b: 100},
+			colorVariation: {r: 150, g: 120, b: 150},
+			delayVariation: 0.5,
+			globalAlpha: 0.5,
+			globalSpeed: 500,
+		});
+		
+		// Add handler on 'Scroll down to learn more' link
+		$().ready(function(){
+			$(".overlap .more").click(function(e){
+				e.preventDefault();
+				$("body,html").animate({scrollTop: $(window).height()});
+			});
+		});		
+
+		
+	});
+	</script>
+
+</body>
+</html>
